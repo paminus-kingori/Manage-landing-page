@@ -1,15 +1,18 @@
-let image = document.getElementById('image');
-const hamb = document.getElementById('ham');
+const iconHolder = document.getElementById('icon-holder');
+const ham = document.querySelector('#icon-ham');
+const close = document.querySelector('#icon-close');
+const links = document.querySelector('#links');
 const overlay = document.getElementById('overlay');
-let icons = ["images/icon-close.svg","images/icon-hamburger.svg"];
 
-hamb.addEventListener('click',function(){
-     console.log("jeh"); 
+iconHolder.addEventListener('click',function(){
+     ham.classList.toggle('none');
+     close.classList.toggle('click');  
+     overlay.classList.toggle('click'); 
+     links.classList.toggle('click');
+     //links.style.display = 'flex';
 });
-image.src = icons[0];
 
-console.log(icons);
-console.log(ham);
+
 
 // hover actions
 const fb = document.getElementById('fb');

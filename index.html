@@ -16,15 +16,15 @@
   </style>
 </head>
 <body>
-
+  <div class="overlayC none" id="overlay"></div>
 <div class="main">
     <div class="top d-flex">
           <img src="images/logo.svg" class="logo">
-              <div class="icon" id="ham">
-                <img src="images/icon-hamburger.svg" id="image">
+              <div class="icon" id="icon-holder">
+                <img src="images/icon-hamburger.svg" id="icon-ham" alt="icon-ham">
+                <img src="images/icon-close.svg" id="icon-close" class="none" alt="icon-close">
               </div>
-          <div class="overlay" id="overlay"></div>
-          <div class="links d-flex" id="links">
+          <div class="none links d-flex" id="links">
                 <p><a href=""> Pricing  </a></p>
                 <p><a href="">    Product  </a></p>
                   <p><a href="">  About Us  </a></p>
@@ -67,9 +67,12 @@
               <div class="d-flex right-section">
 
                     <div class="d-flex feature">
-                      <div class="num"> 01</div>
-                      <div class="single">
+
+                      <div class="single-line">
+                        <div class="num"> 01</div>
                         <div class="title">Track company-wide progress</div>
+                      </div>
+                        <div class="title-text">
                         See how your day-to-day tasks fit into the wider vision. Go from 
                         tracking progress at the milestone level all the way done to the 
                         smallest of details. Never lose sight of the bigger picture again.
@@ -77,25 +80,35 @@
                     </div>
 
                     <div class="d-flex feature">
+
+                      <div class="single-line">
                       <div class="num">02</div>
-                      <div class="single">
-                      <div class="title">Advanced built-in reports</div>
+                     <div class="title">Advanced built-in reports</div>
+                      </div>
+
+                      <div class="title-text">
                       Set internal delivery estimates and track progress toward company 
                       goals. Our customisable dashboard helps you build out the reports 
                       you need to keep key stakeholders informed.
                       </div>
                     </div>
+                   
 
                     <div class="d-flex feature">
+                      <div class="single-line">
                       <div class="num">03</div>
-                      <div class="single">
-                      <div class="title">Everything you need in one place</div>
+                     <div class="title">Everything you need in one place</div>
+                      </div>
+                  
+                      <div class="title-text">
                       Stop jumping from one service to another to communicate, store files, 
                       track tasks and share documents. Manage offers an all-in-one team 
                       productivity solution.
                       </div>
-                    </div>
+                    
                 </div>
+                </div>
+
     </div>
 
 </div>
