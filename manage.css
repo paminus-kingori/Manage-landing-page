@@ -24,10 +24,11 @@ position: relative;
     margin: 30px 0px;
     justify-content: space-between;
     align-items:center;
+    flex-wrap: wrap;
 }
 .links{
-    flex-grow: .1;
-        width: 40%;
+    flex-grow: .25;
+        /* width: 40%; */
     justify-content: space-around;
     height: max-content;
     margin: 0;
@@ -85,7 +86,7 @@ position: relative;
 }
 
 .first{
-    /* flex-wrap: wrap-reverse; */
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
     align-items: center;
     margin: 15px 0px;
@@ -126,7 +127,7 @@ position: relative;
 .second{
     display: flex;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     margin:30px 0px;
 }
  .left-section{
@@ -194,6 +195,7 @@ position: relative;
 .person-slide{
     justify-content: space-between;
     margin: 35px 0px;
+
 }
 .person{
     flex-direction: column;
@@ -213,6 +215,12 @@ position: relative;
 }
 .person:nth-last-child(1){
     display: none;
+}
+.person:nth-last-child(2){
+    display:none;
+}
+.person:nth-child(1){
+    display:none;
 }
 .person-name{
     color: #242d52;
@@ -302,8 +310,28 @@ position: relative;
 .media-icons img:hover{
     fill:#f3603c;
 }
+.circles{
+    display: none;
+}
 @media only screen  and (max-width:375px){
-
+    .dot{
+        width:10px;
+        height:10px;
+        border: 1px solid #f3603c;
+       margin:2px;
+        border-radius:50%;
+    }
+    .circles{
+        position:absolute;
+        z-index:3;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    .background{
+        background:#f3603c;
+    }
 
 .top{
     display: flex;
@@ -359,10 +387,23 @@ position: relative;
     font-size: 28px;
     line-height: 1.2;
 }
-.person-slide{
-    flex-direction: column;
+.hide-flow{
+    /* flex-direction: row; */
+    overflow: hidden;
+    position: relative;
 }
+
+.person{
+    min-width: 100%;
+    height: max-content;
+}
+ .person:nth-child(1){
+    display: flex;;
+} 
 .person:nth-last-child(1){
+    display:flex;
+}
+.person:nth-last-child(2){
     display: flex;
 }
 .links{
