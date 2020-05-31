@@ -1,20 +1,23 @@
 *{
-    font-family: 'Be Vietnam',-apple-system, BlinkMacSystemFont, 'Segoe UI', 
-    Roboto, Oxygen, Ubuntu,  sans-serif;
+    font-family: 'Be Vietnam', sans-serif;
     font-size: 15px;
     font-weight: 400;
     color: hsl(227, 12%, 61%);
+    
 }
 .d-flex{
     display: flex;
 }
 body{
     margin: 0;
+    /* background-image: url("images/bg-desk.svg");  */
+
     background-size: contain;
     background-repeat: no-repeat;
-     background-image: url("images/bg-desk.svg"); 
-}
+} 
 .main{
+background-repeat: no-repeat;
+background-size: cover;
 max-width:90%;
 margin:auto;
 position: relative;
@@ -74,7 +77,7 @@ position: relative;
 }
 .get:hover{
     background-color: #fa947a;
-    color: #f3603c;
+    /* color: #f3603c; */
 }
 .white{
     background-color: white;
@@ -84,6 +87,7 @@ position: relative;
     height: max-content;
     border-radius: 20px;
     padding: 10px 22px;
+    z-index:10;
     cursor: pointer;
 }
 
@@ -100,7 +104,7 @@ position: relative;
     justify-content: space-between;
     align-items: flex-start;
    max-width: 500px;
-    width: 40%;
+    /* width: 40%; */
     min-width: 250px;
 }
 .start-text{
@@ -166,7 +170,7 @@ position: relative;
 .num{
     width: max-content;
     height: max-content;
-    padding: 2px 16px;
+    padding: 2px 13px;
     border-radius: 16px;
     background: #f3603c;
     color: white;
@@ -197,6 +201,7 @@ position: relative;
 .person-slide{
     justify-content: space-between;
     margin: 35px 0px;
+    flex-wrap: wrap;
 
 }
 .person{
@@ -213,7 +218,7 @@ position: relative;
     right: 0;
     z-index: -1;
     top:27%;
-    background: rgba(195, 194, 194, 0.1);
+    background: rgba(195, 194, 194, 0.256);
 }
 .person:nth-last-child(1){
     display: none;
@@ -239,13 +244,26 @@ position: relative;
 }
 .orange{
     height: 200px;
-    /* background:url("images/bg-tablet-pattern.svg"), linear-gradient(45deg,#f3603c,#f3603c); */
+     /* background:url("images/bg-tablet-pattern.svg"), linear-gradient(45deg,#f3603c,#f3603c); */
     justify-content: space-around;
-    background-color: #f3603c;
     align-items: center;
+    position: relative;
+
+}
+.orange-overlay{
+    background: url(images/bg-simplify-section-desktop.svg),linear-gradient(45deg, #f25f3a, #f3603b);    position: absolute;
+    top:0;
+    background-position: bottom;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:1;
+    background-size:cover;
+
 
 }
 .simplify{
+    z-index:10;
     width: 470px;
     font-size: 40px;
     color: white;
@@ -285,8 +303,28 @@ position: relative;
     padding:5px 8px;
 }
 .attribution{
-   background-color: #242d52;
+   background-color: #1d1e25;
    
+}
+.prevDiv,.nextDiv{
+position: absolute;
+z-index: 2;
+top: 0;
+bottom: 0;
+display: none;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+.prevDiv{
+left: 2%;
+}
+.nextDiv{
+right:2%;
+}
+.prevIcon,.nextIcon{
+    width: 12px;
+    opacity:.8;
 }
 /* .comm{
     height: 57%;
@@ -315,7 +353,32 @@ position: relative;
 .circles{
     display: none;
 }
+
+/* animations */
+@keyframes slideIn{
+    0%{
+        transform: none;
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
 @media only screen  and (max-width:375px){
+    .person-slide{
+        flex-wrap: nowrap;
+    }
+    body{
+background:url("images/bg-tablet-pattern.svg");
+background-repeat: no-repeat;
+    }
+    .orange-overlay{
+background: url(images/bg-simplify-section-mobile.svg),linear-gradient(45deg, #f25f3a, #f25f3a);
+        background-repeat: no-repeat;
+    }
+    .prevDiv,.nextDiv{
+        display: flex;
+    }
     .dot{
         width:10px;
         height:10px;
@@ -376,14 +439,18 @@ position: relative;
     height: max-content;
 }
 .single-line{
-    background: #f3613c17;
+    align-items: center;
+    background: #f3613c3d;
     border-radius: 20px;
     margin-bottom: 10px;
-
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
 }
 .main{
     max-width: 100%;
     margin-left: 10px;
+    margin-right: 0;
+
 }
 .what{
     font-size: 28px;
@@ -409,9 +476,9 @@ position: relative;
     display: flex;
 }
 .links{
-        width: 93%;
+        width: 90%;
         text-align: center;
-        transform: translateX(-50%);
+        /* transform: translateX(-50%); */
         left: 50%;
         background: white;
     box-shadow: 1px 2px 4px 0px #00000030;
@@ -422,6 +489,12 @@ position: relative;
     z-index: 3;
     flex-direction: column;
     top: 2%;
+    opacity: 1;
+    animation: slideIn .5s 0s ease forwards;
+
+}
+.slide-out{
+    animation:slideIn .7s 0s linear reverse;
 }
 .overlayC{
     position: fixed;

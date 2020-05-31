@@ -5,12 +5,16 @@ const close = document.querySelector('#icon-close');
 const links = document.querySelector('#links');
 const overlay = document.getElementById('overlay');
 
+// close.addEventListener('click',function(){
+//      links.classList.toggle('slide-out');
+// });
 
 iconHolder.addEventListener('click',function(){
      ham.classList.toggle('none');
      close.classList.toggle('click');  
      overlay.classList.toggle('click'); 
      links.classList.toggle('click');
+     // links.classList.toggle('slide-out');
      //links.style.display = 'flex';
 });
 
