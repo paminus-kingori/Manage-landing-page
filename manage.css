@@ -218,7 +218,7 @@ position: relative;
     right: 0;
     z-index: -1;
     top:27%;
-    background: rgba(195, 194, 194, 0.256);
+    background: rgba(195, 194, 194, 0.13);
 }
 .person:nth-last-child(1){
     display: none;
