@@ -409,6 +409,8 @@ background: url(images/bg-simplify-section-mobile.svg),linear-gradient(45deg, #f
 }
 .icon{
     display: block;
+    margin-right: 12px;
+
 }
 .none{
     display: none;
@@ -489,13 +491,17 @@ background: url(images/bg-simplify-section-mobile.svg),linear-gradient(45deg, #f
     z-index: 3;
     flex-direction: column;
     top: 2%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
     opacity: 1;
-    animation: slideIn .5s 0s ease forwards;
+    /* animation: slideIn .5s 0s ease forwards; */
 
 }
-.slide-out{
+/* .slide-out{
     animation:slideIn .7s 0s linear reverse;
-}
+} */
 .overlayC{
     position: fixed;
     z-index: 1;
